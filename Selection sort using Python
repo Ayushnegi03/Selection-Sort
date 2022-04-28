@@ -1,0 +1,19 @@
+#Selection Sorting
+def SelectionSort( itemsList ):
+    n = len( itemsList )
+    for i in range( n - 1 ): 
+        MinValueIndex = i
+        for j in range( i + 1, n ):
+            if itemsList[j] < itemsList[MinValueIndex] :
+                MinValueIndex = j
+        if MinValueIndex != i :
+            tmp = itemsList[i]
+            itemsList[i] = itemsList[MinValueIndex]
+            itemsList[MinValueIndex] = tmp
+    return itemsList
+element = [-10,2,-4,-1,32,14,21,6,9,33,3]
+print("Before Sorting:",element)
+print("After usning selection sort:",SelectionSort(element))
+#Output-
+#Before Sorting: [-10, 2, -4, -1, 32, 14, 21, 6, 9, 33, 3]
+#After usning selection sort: [-10, -4, -1, 2, 3, 6, 9, 14, 21, 32, 33]
